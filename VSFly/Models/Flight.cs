@@ -19,7 +19,7 @@ namespace VSFly.Models
         public virtual double BasePrice { get; set; }
 
         // Clé étrangères
-        public virtual ICollection<Booking> Bookings { get; set; }
-        public virtual Employee Pilot { get; set; }
+        public virtual ICollection<Booking> BookedIn { get; set; }
+        public virtual ICollection<Employee> EmployeesOnBoard { get; set; }
     }
 }

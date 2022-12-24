@@ -11,6 +11,7 @@ namespace VSFly.Models
     {
         [Key]
         public virtual int Id { get; set; }
+        public virtual double SalePrice { get; set; }
 
         // Foreing Key
         public virtual Flight Flight { get; set; }
