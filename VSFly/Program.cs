@@ -20,9 +20,9 @@ using (var ctx = new AeroportContext())
     {
         Console.WriteLine("Insertion d'éléments dans la base de données...");
 
-        var passager1 = new Passager() { Nom = "Salamin", Prenom = "Bastien" };
-        var passager2 = new Passager() { Nom = "Amano", Prenom = "Maya" };
-        var passager3 = new Passager() { Nom = "Suou", Prenom = "Tatsuya" };
+        var passager1 = new Passenger() { Nom = "Salamin", Prenom = "Bastien" };
+        var passager2 = new Passenger() { Nom = "Amano", Prenom = "Maya" };
+        var passager3 = new Passenger() { Nom = "Suou", Prenom = "Tatsuya" };
 
         ctx.Passagers.Add(passager1);
         ctx.Passagers.Add(passager2);

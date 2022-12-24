@@ -23,14 +23,14 @@ namespace VSFlyAPI.Controllers
 
         // GET: api/Passagers
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Passager>>> GetPassagers()
+        public async Task<ActionResult<IEnumerable<Passenger>>> GetPassagers()
         {
             return await _context.Passagers.ToListAsync();
         }
 
         // GET: api/Passagers/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Passager>> GetPassager(int id)
+        public async Task<ActionResult<Passenger>> GetPassager(int id)
         {
             var passager = await _context.Passagers.FindAsync(id);
 
@@ -45,7 +45,7 @@ namespace VSFlyAPI.Controllers
         // PUT: api/Passagers/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutPassager(int id, Passager passager)
+        public async Task<IActionResult> PutPassager(int id, Passenger passager)
         {
             if (id != passager.IdPassager)
             {
@@ -76,7 +76,7 @@ namespace VSFlyAPI.Controllers
         // POST: api/Passagers
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Passager>> PostPassager(Passager passager)
+        public async Task<ActionResult<Passenger>> PostPassager(Passenger passager)
         {
             _context.Passagers.Add(passager);
             await _context.SaveChangesAsync();
