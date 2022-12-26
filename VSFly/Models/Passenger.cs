@@ -9,7 +9,7 @@ namespace VSFly.Models
 {
     public class Passenger : Person
     {
-        public virtual bool isActive { get; set; }
+        public virtual bool isActiveClient { get; set; }
 
         // Foreing Key
         // Flight <---------------- Booking -------------------> Passenger

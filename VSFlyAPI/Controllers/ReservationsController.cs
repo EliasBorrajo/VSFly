@@ -14,9 +14,9 @@ namespace VSFlyAPI.Controllers
     [ApiController]
     public class ReservationsController : ControllerBase
     {
-        private readonly AeroportContext _context;
+        private readonly VSFlyContext _context;
 
-        public ReservationsController(AeroportContext context)
+        public ReservationsController(VSFlyContext context)
         {
             _context = context;
         }

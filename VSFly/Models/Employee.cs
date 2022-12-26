@@ -12,7 +12,7 @@ namespace VSFly.Models
         public virtual bool isPilot { get; set; }
 
         // Foreing Key
-        public virtual ICollection<Flight> Flights { get; set; } 
-        // Faire une vérification que on ne puisse pas le mettre au même flight à 2 dates identiques.
+        public virtual Flight Flight { get; set; } 
+        // L'employé n'est attribué qu'à un seul vol à la fois.
     }
 }
