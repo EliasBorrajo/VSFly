@@ -86,19 +86,35 @@ void SeedDB(VSFlyContext context)
 
     // Le booking est lié au passenger, et détient les informations d'achats de SON vol
     // Vol 1 - Passager 1
-    Booking booking1 = new Booking() { IdFlight = flight1.FlightNo, IdPassenger = passenger1.Id , SalePrice = CalculateSalePrice(flight1) };
+    Booking booking1 = new Booking() { IdFlight = flight1.FlightNo, 
+                                                                Flight = flight1, 
+                                                                //IdPassenger = passenger1.Id , 
+                                                                Passenger = passenger1,
+                                                                SalePrice = CalculateSalePrice(flight1) };
     flight1.FreeSeats--;
 
     // Vol 1 - Passager 2
-    Booking booking2 = new Booking() { IdFlight = flight1.FlightNo, IdPassenger = passenger2.Id, SalePrice = CalculateSalePrice(flight1) };
+    Booking booking2 = new Booking() { IdFlight = flight1.FlightNo, 
+                                                                Flight = flight1, 
+                                                                //IdPassenger = passenger2.Id,
+                                                                Passenger = passenger2,
+                                                                SalePrice = CalculateSalePrice(flight1) };
     flight1.FreeSeats--;
 
     // Vol 2 - Passager 2
-    Booking booking3 = new Booking() { IdFlight = flight2.FlightNo, IdPassenger = passenger2.Id, SalePrice = CalculateSalePrice(flight2) };
+    Booking booking3 = new Booking() { IdFlight = flight2.FlightNo, 
+                                                                Flight = flight2, 
+                                                                //IdPassenger = passenger2.Id,
+                                                                Passenger = passenger2,
+                                                                SalePrice = CalculateSalePrice(flight2) };
     flight2.FreeSeats--;
 
     // Vol 2 - Passager 3
-    Booking booking4 = new Booking() { IdFlight = flight2.FlightNo, IdPassenger = passenger3.Id, SalePrice = CalculateSalePrice(flight2) };
+    Booking booking4 = new Booking() { IdFlight = flight2.FlightNo, 
+                                                                Flight = flight2, 
+                                                                //IdPassenger = passenger3.Id,
+                                                                Passenger = passenger3,
+                                                                SalePrice = CalculateSalePrice(flight2) };
     flight2.FreeSeats--;
 
     if(true)
