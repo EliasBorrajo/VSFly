@@ -15,14 +15,14 @@ namespace VSFly.Models
         public virtual double SalePrice { get; set; }
 
         // Foreing Key
-        //[ForeignKey("FlightNo")]
         [ForeignKey("Flight")]
         public int IdFlight { get; set; }
+        [InverseProperty("BookedIn")]
         public virtual Flight Flight { get; set; }
 
-        //[ForeignKey("Id")]
         [ForeignKey("Passenger")]
         public int IdPassenger { get; set; }
+        [InverseProperty("Bookings")]
         public virtual Passenger Passenger { get; set; }
     }
 }

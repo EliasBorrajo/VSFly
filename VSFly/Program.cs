@@ -88,7 +88,7 @@ void SeedDB(VSFlyContext context)
     // Vol 1 - Passager 1
     Booking booking1 = new Booking() { IdFlight = flight1.FlightNo, 
                                                                 Flight = flight1, 
-                                                                //IdPassenger = passenger1.Id , 
+                                                                IdPassenger = passenger1.Id , 
                                                                 Passenger = passenger1,
                                                                 SalePrice = CalculateSalePrice(flight1) };
     flight1.FreeSeats--;
@@ -96,7 +96,7 @@ void SeedDB(VSFlyContext context)
     // Vol 1 - Passager 2
     Booking booking2 = new Booking() { IdFlight = flight1.FlightNo, 
                                                                 Flight = flight1, 
-                                                                //IdPassenger = passenger2.Id,
+                                                                IdPassenger = passenger2.Id,
                                                                 Passenger = passenger2,
                                                                 SalePrice = CalculateSalePrice(flight1) };
     flight1.FreeSeats--;
@@ -104,7 +104,7 @@ void SeedDB(VSFlyContext context)
     // Vol 2 - Passager 2
     Booking booking3 = new Booking() { IdFlight = flight2.FlightNo, 
                                                                 Flight = flight2, 
-                                                                //IdPassenger = passenger2.Id,
+                                                                IdPassenger = passenger2.Id,
                                                                 Passenger = passenger2,
                                                                 SalePrice = CalculateSalePrice(flight2) };
     flight2.FreeSeats--;
@@ -112,7 +112,7 @@ void SeedDB(VSFlyContext context)
     // Vol 2 - Passager 3
     Booking booking4 = new Booking() { IdFlight = flight2.FlightNo, 
                                                                 Flight = flight2, 
-                                                                //IdPassenger = passenger3.Id,
+                                                                IdPassenger = passenger3.Id,
                                                                 Passenger = passenger3,
                                                                 SalePrice = CalculateSalePrice(flight2) };
     flight2.FreeSeats--;

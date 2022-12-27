@@ -25,9 +25,7 @@ namespace VSFlyAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Passenger>>> GetPassengers()
         {
-            var xolo = await _context.Passengers.ToListAsync();
-            Console.WriteLine("\n\nXOLO : \n\n" + xolo);
-            return xolo;
+            return await _context.Passengers.ToListAsync();
         }
 
         // GET: api/Passengers/5

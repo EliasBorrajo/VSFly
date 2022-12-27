@@ -31,6 +31,7 @@ namespace VSFly
         ///  method to define the relationships between the entities.
         ///  Avoids circular referene
         /// </summary>
+        
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Booking>()
@@ -43,6 +44,6 @@ namespace VSFly
                 .WithMany(passenger => passenger.Bookings)
                 .HasForeignKey(booking => booking.IdPassenger);
         }
-
+        
     }
 }
