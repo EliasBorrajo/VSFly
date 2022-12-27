@@ -6,7 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllers();
-builder.Services.AddDbContext<VSFlyContext>(opt => opt.UseSqlServer(VSFlyContext.ConnectionString));
+builder.Services.AddDbContext<VSFlyContext>(opt => opt.UseSqlServer(VSFlyContext.ConnectionString)); // Ajoute la connection string
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

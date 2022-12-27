@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,7 +15,12 @@ namespace VSFly.Models
         public virtual double SalePrice { get; set; }
 
         // Foreing Key
-        public virtual Flight Flight { get; set; }
-        public virtual Passenger Passenger { get; set; }
+        [ForeignKey("FlightNo")]
+        public virtual int IdFlight { get; set; }
+        //public virtual Flight Flight { get; set; }
+
+        [ForeignKey("Id")]
+        public virtual int IdPassenger { get; set; }
+        //public virtual Passenger Passenger { get; set; }
     }
 }

@@ -12,47 +12,49 @@ namespace VSFlyAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class PassagersController : ControllerBase
+    public class PassengersController : ControllerBase
     {
         private readonly VSFlyContext _context;
 
-        public PassagersController(VSFlyContext context)
+        public PassengersController(VSFlyContext context)
         {
             _context = context;
         }
 
-        // GET: api/Passagers
+        // GET: api/Passengers
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Passenger>>> GetPassagers()
+        public async Task<ActionResult<IEnumerable<Passenger>>> GetPassengers()
         {
-            return await _context.Passagers.ToListAsync();
+            var xolo = await _context.Passengers.ToListAsync();
+            Console.WriteLine("\n\nXOLO : \n\n" + xolo);
+            return xolo;
         }
 
-        // GET: api/Passagers/5
+        // GET: api/Passengers/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Passenger>> GetPassager(int id)
+        public async Task<ActionResult<Passenger>> GetPassenger(int id)
         {
-            var passager = await _context.Passagers.FindAsync(id);
+            var passenger = await _context.Passengers.FindAsync(id);
 
-            if (passager == null)
+            if (passenger == null)
             {
                 return NotFound();
             }
 
-            return passager;
+            return passenger;
         }
 
-        // PUT: api/Passagers/5
+        // PUT: api/Passengers/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutPassager(int id, Passenger passager)
+        public async Task<IActionResult> PutPassenger(int id, Passenger passenger)
         {
-            if (id != passager.IdPassager)
+            if (id != passenger.Id)
             {
                 return BadRequest();
             }
 
-            _context.Entry(passager).State = EntityState.Modified;
+            _context.Entry(passenger).State = EntityState.Modified;
 
             try
             {
@@ -60,7 +62,7 @@ namespace VSFlyAPI.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!PassagerExists(id))
+                if (!PassengerExists(id))
                 {
                     return NotFound();
                 }
@@ -73,36 +75,36 @@ namespace VSFlyAPI.Controllers
             return NoContent();
         }
 
-        // POST: api/Passagers
+        // POST: api/Passengers
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Passenger>> PostPassager(Passenger passager)
+        public async Task<ActionResult<Passenger>> PostPassenger(Passenger passenger)
         {
-            _context.Passagers.Add(passager);
+            _context.Passengers.Add(passenger);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetPassager", new { id = passager.IdPassager }, passager);
+            return CreatedAtAction("GetPassenger", new { id = passenger.Id }, passenger);
         }
 
-        // DELETE: api/Passagers/5
+        // DELETE: api/Passengers/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeletePassager(int id)
+        public async Task<IActionResult> DeletePassenger(int id)
         {
-            var passager = await _context.Passagers.FindAsync(id);
-            if (passager == null)
+            var passenger = await _context.Passengers.FindAsync(id);
+            if (passenger == null)
             {
                 return NotFound();
             }
 
-            _context.Passagers.Remove(passager);
+            _context.Passengers.Remove(passenger);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        private bool PassagerExists(int id)
+        private bool PassengerExists(int id)
         {
-            return _context.Passagers.Any(e => e.IdPassager == id);
+            return _context.Passengers.Any(e => e.Id == id);
         }
     }
 }

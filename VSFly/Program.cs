@@ -86,19 +86,19 @@ void SeedDB(VSFlyContext context)
 
     // Le booking est lié au passenger, et détient les informations d'achats de SON vol
     // Vol 1 - Passager 1
-    Booking booking1 = new Booking() { Flight = flight1, Passenger = passenger1 , SalePrice = CalculateSalePrice(flight1) };
+    Booking booking1 = new Booking() { IdFlight = flight1.FlightNo, IdPassenger = passenger1.Id , SalePrice = CalculateSalePrice(flight1) };
     flight1.FreeSeats--;
 
     // Vol 1 - Passager 2
-    Booking booking2 = new Booking() { Flight = flight1, Passenger = passenger2, SalePrice = CalculateSalePrice(flight1) };
+    Booking booking2 = new Booking() { IdFlight = flight1.FlightNo, IdPassenger = passenger2.Id, SalePrice = CalculateSalePrice(flight1) };
     flight1.FreeSeats--;
 
     // Vol 2 - Passager 2
-    Booking booking3 = new Booking() { Flight = flight2, Passenger = passenger2, SalePrice = CalculateSalePrice(flight2) };
+    Booking booking3 = new Booking() { IdFlight = flight2.FlightNo, IdPassenger = passenger2.Id, SalePrice = CalculateSalePrice(flight2) };
     flight2.FreeSeats--;
 
     // Vol 2 - Passager 3
-    Booking booking4 = new Booking() { Flight = flight2, Passenger = passenger3, SalePrice = CalculateSalePrice(flight2) };
+    Booking booking4 = new Booking() { IdFlight = flight2.FlightNo, IdPassenger = passenger3.Id, SalePrice = CalculateSalePrice(flight2) };
     flight2.FreeSeats--;
 
     if(true)
@@ -108,8 +108,8 @@ void SeedDB(VSFlyContext context)
         context.Flights.Add(flight2);
 
         context.Passengers.Add(passenger1);
-        context.Passengers.Add(passenger1);
-        context.Passengers.Add(passenger1);
+        context.Passengers.Add(passenger2);
+        context.Passengers.Add(passenger3);
 
         context.Employees.Add(employee1);
         context.Employees.Add(employee2);
