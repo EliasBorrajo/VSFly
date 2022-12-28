@@ -12,7 +12,6 @@ namespace VSFly.Models
         public virtual bool isActiveClient { get; set; }
 
         // Foreing Key
-        // Flight <---------------- Booking -------------------> Passenger
         public virtual ICollection<Booking> Bookings { get; set; }
     }
 }
