@@ -1,6 +1,6 @@
-﻿namespace VSFlyAPI.Models
+﻿namespace VSFlyWebApp.Models
 {
-    public class FlightM
+    public class Flight
     {
         public virtual int FlightNo { get; set; }
         public virtual string Departure { get; set; }
