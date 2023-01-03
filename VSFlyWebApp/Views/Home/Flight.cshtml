@@ -1,0 +1,12 @@
+﻿@model List<double>
+@{
+    ViewData["Title"] = "Flight information";
+}
+<h1>@ViewData["Title"]</h1>
+<hr/>
+<p>Flight sale price :</p>
+<p><b>@Model.ElementAt(0) CHF</b></p>
+<hr/>
+<p>Total sale price of flight :</p>
+<p><b>@Model.ElementAt(1) CHF</b></p>
+<hr/>

@@ -22,6 +22,19 @@ namespace VSFlyWebApp.Controllers
             return View(flightList);
         }
 
+        public async Task<IActionResult> Flight(int id)
+        {
+            List<double> results = new List<double>();
+
+            var flightSalePrice = await _flyService.GetFlightSalePrice(id);
+            results.Add(flightSalePrice);
+
+            var totalSalePriceOfFlight = await _flyService.GetTotalSalePriceOfFlight(id);
+            results.Add(totalSalePriceOfFlight);
+
+            return View(results);
+        }
+
         public async Task<IActionResult> Details(string destination)
         {
             var averageSalePriceOfAllFlightsInDestinationTo = await _flyService.GetAverageSalePriceOfAllFlightsInDestinationTo(destination);
