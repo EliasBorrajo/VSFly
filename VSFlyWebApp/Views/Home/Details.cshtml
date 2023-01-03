@@ -1,10 +1,11 @@
 ﻿@model double
 @{
-    string destination = ViewContext.HttpContext.Request.Query["destination"];
+    string destinationCity = ViewContext.HttpContext.Request.Query["destination"];
 
-    ViewData["Title"] = destination;
+    ViewData["Title"] = destinationCity;
 }
 <h1>@ViewData["Title"]</h1>
 
-<p>Average sale price of all flights in destination to @destination :</p>
+<p>Average sale price of all flights in destination to @destinationCity :</p>
 <p><b>@Model CHF</b></p>
+<p>@Html.ActionLink("Booked tickets", "ResumeBookedTicketsOfDestination", new { destination=destinationCity })</p>

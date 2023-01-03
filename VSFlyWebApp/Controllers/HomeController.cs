@@ -28,6 +28,12 @@ namespace VSFlyWebApp.Controllers
             return View(averageSalePriceOfAllFlightsInDestinationTo);
         }
 
+        public async Task<IActionResult> ResumeBookedTicketsOfDestination(string destination)
+        {
+            var bookedTickets = await _flyService.GetResumeBookedTicketsOfDestination(destination);
+            return View(bookedTickets);
+        }
+
         public IActionResult Privacy()
         {
             return View();

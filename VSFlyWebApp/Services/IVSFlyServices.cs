@@ -7,5 +7,7 @@ namespace VSFlyWebApp.Services
         Task<IEnumerable<Flight>> GetAvailableFlights();
 
         Task<double> GetAverageSalePriceOfAllFlightsInDestinationTo(string Destination);
+
+        Task<IEnumerable<Models.ResumeBookedTicket>> GetResumeBookedTicketsOfDestination(string destination);
     }
 }

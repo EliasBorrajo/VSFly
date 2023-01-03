@@ -171,7 +171,7 @@ namespace VSFlyAPI.Controllers
 
         // GET: api/Bookings/ResumeBookedTickets/Destination
         [HttpGet("ResumeBookedTicketsOfDestination/{Destination}")]
-        public async Task<ActionResult<IEnumerable< ResumeBookedTicket>>> ResumeBookedTicketsOfDestination(string Destination)
+        public async Task<ActionResult<IEnumerable<ResumeBookedTicket>>> ResumeBookedTicketsOfDestination(string Destination)
         {
             //  f.	Return the list of all tickets sold for a destination with the first and last name of the travelers
             //  and the flight number as well as the sale price of each ticket
