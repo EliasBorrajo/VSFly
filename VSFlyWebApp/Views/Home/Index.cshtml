@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<VSFlyWebApp.Models.Flight>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Available Flights";
 }
 
-<h1>Index</h1>
+<h1>@ViewData["Title"]</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -62,7 +62,7 @@
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { destination=item.Destination }) |
                 @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
             </td>
         </tr>

@@ -25,5 +25,19 @@ namespace VSFlyWebApp.Services
 
             return flightList;
         }
+
+        public async Task<double> GetAverageSalePriceOfAllFlightsInDestinationTo(string destination)
+        {
+            var uri = _baseURI + "Bookings/AverageSalePriceOfAllFlightsInDestinationTo/" + destination;
+
+            var responseJSON = await _client.GetAsync(uri);
+            responseJSON.EnsureSuccessStatusCode();
+
+            var data = await responseJSON.Content.ReadAsStringAsync();
+
+            var price = JsonConvert.DeserializeObject<double>(data);
+
+            return price;
+        }
     }
 }

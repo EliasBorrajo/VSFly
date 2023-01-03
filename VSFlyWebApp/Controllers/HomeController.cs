@@ -22,6 +22,12 @@ namespace VSFlyWebApp.Controllers
             return View(flightList);
         }
 
+        public async Task<IActionResult> Details(string destination)
+        {
+            var averageSalePriceOfAllFlightsInDestinationTo = await _flyService.GetAverageSalePriceOfAllFlightsInDestinationTo(destination);
+            return View(averageSalePriceOfAllFlightsInDestinationTo);
+        }
+
         public IActionResult Privacy()
         {
             return View();

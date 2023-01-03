@@ -1,0 +1,10 @@
+﻿@model double
+@{
+    string destination = ViewContext.HttpContext.Request.Query["destination"];
+
+    ViewData["Title"] = destination;
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Average sale price of all flights in destination to @destination :</p>
+<p><b>@Model CHF</b></p>
