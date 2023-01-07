@@ -43,6 +43,15 @@ namespace VSFlyWebApp.Controllers
             return View(booking);
         }
 
+        [HttpPost]
+        public async Task<IActionResult> Booking(Booking booking)
+        {
+            bool test = await _flyService.BookAFlight(booking.idPassenger, booking.idFlight);
+            Console.WriteLine("HomeController : méthode Booking POST " + test);
+
+            return RedirectToAction("Index");
+        }
+
         public async Task<IActionResult> Details(string destination)
         {
             var averageSalePriceOfAllFlightsInDestinationTo = await _flyService.GetAverageSalePriceOfAllFlightsInDestinationTo(destination);

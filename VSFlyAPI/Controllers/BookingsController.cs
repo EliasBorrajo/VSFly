@@ -67,6 +67,7 @@ namespace VSFlyAPI.Controllers
         [HttpPost("BookAFlight/{idPassenger}/{idFlight}")]
         public async Task<ActionResult> BookAFlight(int idPassenger ,int idFlight)
         {
+            Console.WriteLine("API Values = " + idPassenger + " " + idFlight);
             // c.	Buying a ticket on a flight
             // 1) recuperer les entités depuis la DB
             var passenger = await _context.Passengers.FindAsync( idPassenger );

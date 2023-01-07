@@ -88,11 +88,10 @@ namespace VSFlyWebApp.Services
         public async Task<bool> BookAFlight(int idPassenger, int idFlight)
         {
             // Build the request URI and request body
-            var requestUri = _baseURI + "Bookings/ BookAFlight";
-            var requestBody = new { idPassenger = idPassenger, idFlight = idFlight };
+            var requestUri = _baseURI + "Bookings/BookAFlight/" + idPassenger + "/" + idFlight;
 
             // Serialize the request body to a JSON string
-            var requestBodyJson = JsonConvert.SerializeObject(requestBody);
+            var requestBodyJson = JsonConvert.SerializeObject(requestUri);
 
             // Create a new HTTP client and POST request message
             var client = new HttpClient();
@@ -102,6 +101,8 @@ namespace VSFlyWebApp.Services
                 RequestUri = new Uri(requestUri),
                 Content = new StringContent(requestBodyJson, Encoding.UTF8, "application/json")
             };
+
+            Console.WriteLine("Request: " + request);
 
             // Send the request and get the response
             var response = await client.SendAsync(request);
