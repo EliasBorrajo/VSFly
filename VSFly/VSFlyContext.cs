@@ -17,33 +17,21 @@ namespace VSFly
         public static string ConnectionString { get; set; } = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\uadmin\\Documents\\ProgrammationComposants\\VSFlyDatabase\\Aeroport.mdf;Integrated Security=True;Connect Timeout=30";
         //public static string ConnectionString { get; set; } = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\garam\\Desktop\\Documents\\HES-SO\\HEG\\CSharp\\S5\\Composants_cours\\04_Projet_VSFlight\\DataBase\\DB_VsFly.mdf;Integrated Security=True;Connect Timeout=30";
 
+        /// <summary>
+        /// Initializes a new instance of the VSFlyContext class.
+        /// </summary>
         public VSFlyContext() { }
 
         //Est appelé au début quand on lance l'application.
+        /// <summary>
+        /// Configures the options for the VSFlyContext.
+        /// </summary>
+        /// <param name="builder">The options builder to configure.</param>
         protected override void OnConfiguring(DbContextOptionsBuilder builder)
         {             
             // Elements de configuration de Entity Framework
             builder.UseLazyLoadingProxies();
             builder.UseSqlServer(ConnectionString);   // On lui dit ou est la DB
         }
-
-        /// <summary>
-        ///  method to define the relationships between the entities.
-        ///  Avoids circular referene
-        /// </summary>
-        /*
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<Booking>()
-                .HasOne(booking => booking.Flight)
-                .WithMany(flight => flight.BookedIn)
-                .HasForeignKey(booking => booking.IdFlight);
-
-            modelBuilder.Entity<Booking>()
-                .HasOne(booking => booking.Passenger)
-                .WithMany(passenger => passenger.Bookings)
-                .HasForeignKey(booking => booking.IdPassenger);
-        }
-        */
     }
 }
