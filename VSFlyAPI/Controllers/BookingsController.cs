@@ -15,7 +15,9 @@ using VSFlyAPI.Models;
 
 namespace VSFlyAPI.Controllers
 {
-
+    /// <summary>
+    /// The BookingsController class is a controller that handles requests related to bookings in the VSFlyAPI.
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class BookingsController : ControllerBase
@@ -30,6 +32,11 @@ namespace VSFlyAPI.Controllers
         // M A I N   C O M M A N D S   -   R E Q U I R E M E N T S   S P E C I F I C A T I O N S 
 
         // GET: api/Bookings/AvailableFlights
+        /// <summary>
+        /// Handles a GET request to the "api/Bookings/AvailableFlights" endpoint.
+        /// Returns a list of all available flights (not full).
+        /// </summary>
+        /// <returns>A list of available flights.</returns>
         [HttpGet("AvailableFlights")]
         public async Task<ActionResult<IEnumerable<FlightM>>> GetAvailableFlights()
         {
@@ -46,6 +53,12 @@ namespace VSFlyAPI.Controllers
         }
 
         // GET: api/Bookings/FlightSalePrice/IdFlight
+        /// <summary>
+        /// Handles a GET request to the "api/Bookings/FlightSalePrice/{idFlight}" endpoint.
+        /// Returns the sale price of a flight with the specified ID.
+        /// </summary>
+        /// <param name="idFlight">The ID of the flight to get the sale price for.</param>
+        /// <returns>The sale price of the specified flight.</returns>
         [HttpGet("FlightSalePrice/{idFlight}")]
         public async Task<ActionResult<double>> FlightSalePrice(int idFlight)
         {
@@ -64,6 +77,10 @@ namespace VSFlyAPI.Controllers
         }
 
         // POST: api/Bookings/BookAFlight/1/2
+        /// <summary>
+        /// Handles a POST request to the "api/Bookings/BookAFlight/{idPassenger}/{idFlight}" endpoint.
+        /// Buys a ticket on a flight for the specified passenger and flight.
+        /// </summary
         [HttpPost("BookAFlight/{idPassenger}/{idFlight}")]
         public async Task<ActionResult> BookAFlight(int idPassenger ,int idFlight)
         {
@@ -115,6 +132,11 @@ namespace VSFlyAPI.Controllers
         }
 
         // GET: api/Bookings/TotalSalePriceOfFlight/IdFlight
+        /// <summary>
+        /// Returns the total sale price of all tickets sold for a flight.
+        /// </summary>
+        /// <param name="idFlight">The ID of the flight.</param>
+        /// <returns>The total sale price of all tickets for the flight as a double.</returns>
         [HttpGet("TotalSalePriceOfFlight/{idFlight}")]
         public async Task<ActionResult<double>> TotalSalePriceOfFlight(int idFlight)
         {
@@ -136,6 +158,11 @@ namespace VSFlyAPI.Controllers
         }
 
         // GET: api/Bookings/AverageSalePriceOfAllFlightsInDestinationTo/Destination
+        /// <summary>
+        /// Returns the average sale price of all tickets sold for a destination.
+        /// </summary>
+        /// <param name="Destination">The destination for which to calculate the average sale price of tickets.</param>
+        /// <returns>The average sale price of tickets for the destination as a double.</returns>
         [HttpGet("AverageSalePriceOfAllFlightsInDestinationTo/{Destination}")]
         public async Task<ActionResult<double>> AverageSalePriceOfAllFlightsInDestinationTo (string Destination)
         {
@@ -171,6 +198,11 @@ namespace VSFlyAPI.Controllers
         }
 
         // GET: api/Bookings/ResumeBookedTickets/Destination
+        /// <summary>
+        /// Returns a list of all tickets sold for a destination with the first and last name of the travelers and the flight number as well as the sale price of each ticket.
+        /// </summary>
+        /// <param name="Destination">The destination for which to return ticket information.</param>
+        /// <returns>A list of objects containing information about tickets sold for the destination.</returns>
         [HttpGet("ResumeBookedTicketsOfDestination/{Destination}")]
         public async Task<ActionResult<IEnumerable<ResumeBookedTicket>>> ResumeBookedTicketsOfDestination(string Destination)
         {
@@ -210,6 +242,13 @@ namespace VSFlyAPI.Controllers
 
         // CREATE & DELETE DB INPUTS
         // POST: api/Bookings/NewPassenger/name/isActive/email
+        /// <summary>
+        /// Creates a new passenger in the database.
+        /// </summary>
+        /// <param name="name">The name of the passenger.</param>
+        /// <param name="isActive">A boolean indicating whether the passenger is active or not.</param>
+        /// <param name="email">The email of the passenger.</param>
+        /// <returns></returns>
         [HttpPost("NewPassenger/{name}/{isActive}/{email}")]
         public async Task<ActionResult> NewPassenger( string name, bool isActive, string email )
         {
@@ -246,6 +285,13 @@ namespace VSFlyAPI.Controllers
         }
 
         // POST: api/Bookings/NewFlight/params...
+        /// <summary>
+        /// Creates a new booking in the database.
+        /// </summary>
+        /// <param name="flightId">The ID of the flight for the booking.</param>
+        /// <param name="passengerId">The ID of the passenger for the booking.</param>
+        /// <param name="salePrice">The sale price of the ticket for the booking.</param>
+        /// <returns></returns>
         [HttpPost("NewFlight/{departure}/{destination}/{date_YMD}/{basePrice}/{totalSeats}/{freeSeats}")]
         public async Task<ActionResult> NewFlight(string departure, string destination, DateTime date_YMD, double basePrice, int totalSeats, int freeSeats)
         {
