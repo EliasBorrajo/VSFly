@@ -63,7 +63,7 @@ namespace VSFlyAPI.Controllers
             return CalculateSalePrice(flight);
         }
 
-        // POST: api/Bookings/BookAFlight/1&2
+        // POST: api/Bookings/BookAFlight/1/2
         [HttpPost("BookAFlight/{idPassenger}/{idFlight}")]
         public async Task<ActionResult> BookAFlight(int idPassenger ,int idFlight)
         {

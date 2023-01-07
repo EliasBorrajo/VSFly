@@ -70,7 +70,7 @@ void SeedDB(VSFlyContext context)
     Console.WriteLine("Seeding the DB");
                                                                                                                              // Date Time  = Year, Month, Day, Hour, Minutes, Seconds
     var flight1 = new Flight() { Departure = "Genève", Destination = "Tokyo",    Date = new DateTime(2023, 1, 22, 12,   0, 0),   BasePrice = 60.00, TotalSeats = 100, FreeSeats = 81 };
-    var flight2 = new Flight() { Departure = "Sion",      Destination = "Londres", Date = new DateTime(2023, 1,  1, 18, 30, 0),   BasePrice = 80.00, TotalSeats = 200, FreeSeats = 101 };
+    var flight2 = new Flight() { Departure = "Sion",      Destination = "Londres", Date = new DateTime(2023, 1,  25, 18, 30, 0),   BasePrice = 80.00, TotalSeats = 200, FreeSeats = 101 };
 
     var passenger1 = new Passenger() { Name = "Gandalf", isActiveClient = true, Email = "gandalf@gmail.com" };
     var passenger2 = new Passenger() { Name = "Saruman", isActiveClient = true, Email = "saruman@gmail.com" };
