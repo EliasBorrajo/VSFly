@@ -32,7 +32,15 @@ namespace VSFlyWebApp.Controllers
             var totalSalePriceOfFlight = await _flyService.GetTotalSalePriceOfFlight(id);
             results.Add(totalSalePriceOfFlight);
 
+            results.Add(id);
+
             return View(results);
+        }
+
+        public IActionResult Booking(int id)
+        {
+            var booking = new Booking { idFlight = id };
+            return View(booking);
         }
 
         public async Task<IActionResult> Details(string destination)

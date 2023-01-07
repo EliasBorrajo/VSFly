@@ -10,3 +10,5 @@
 <p>Total sale price of flight :</p>
 <p><b>@Model.ElementAt(1) CHF</b></p>
 <hr/>
+<p>@Html.ActionLink("Réserver un billet", "Booking", new { id=Model.ElementAt(2) })</p>
+<hr />
