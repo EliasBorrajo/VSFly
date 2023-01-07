@@ -1,5 +1,8 @@
 ﻿namespace VSFlyAPI.Models
 {
+    /// <summary>
+    /// Represents a flight with information including flight number, departure and destination locations, date, total and available seats, and base price.
+    /// </summary>
     public class FlightM
     {
         public virtual int FlightNo { get; set; }

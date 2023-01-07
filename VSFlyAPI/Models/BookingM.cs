@@ -2,6 +2,9 @@
 
 namespace VSFlyAPI.Models
 {
+    /// <summary>
+    /// Represents a booking with information including the ID, sale price, flight ID, and passenger ID.
+    /// </summary>
     public class BookingM
     {
         public virtual int Id { get; set; }
@@ -11,13 +14,5 @@ namespace VSFlyAPI.Models
         public int IdPassenger { get; set; }
 
 
-        // Foreing Key
-        /*[ForeignKey("Flight")]
-        [InverseProperty("BookedIn")]*/
-        //public virtual Flight Flight { get; set; }
-
-        /*[ForeignKey("Passenger")]
-        [InverseProperty("Bookings")]*/
-        //public virtual Passenger Passenger { get; set; }
     }
 }

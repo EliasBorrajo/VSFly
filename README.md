@@ -7,6 +7,9 @@ Date du rendu, le 10.01.2023
     - Database crée par Entity Framework via la structure du code (code first)
     - Côté client, web app d'une compagnie aérienne utilisant notre API
 
+# Resumé des fonctionalitées
+* Le cahier des charges a été suivi, tout fonctionne du côté API & Etity FrameWork
+* Bonus : On a créé un client MVC qui peut faire des requêtes à notre API.
 
 # Cahier des charges - EN
 ## Introduction

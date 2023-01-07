@@ -8,6 +8,12 @@ using VSFly.Models;
 
 namespace VSFly
 {
+    /// <summary>
+    /// A database context class for the VSFly database.
+    /// </summary>
+    /// <remarks>
+    /// This class is used to interact with the database and perform CRUD operations. It includes DbSet properties for each of the following entity types: Flight, Passenger, Booking, and Employee.
+    /// </remarks>
     public class VSFlyContext : DbContext
     {
         public DbSet<Flight> Flights { get; set; }
