@@ -26,24 +26,5 @@ namespace VSFly
             builder.UseLazyLoadingProxies();
             builder.UseSqlServer(ConnectionString);   // On lui dit ou est la DB
         }
-
-        /// <summary>
-        ///  method to define the relationships between the entities.
-        ///  Avoids circular referene
-        /// </summary>
-        /*
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<Booking>()
-                .HasOne(booking => booking.Flight)
-                .WithMany(flight => flight.BookedIn)
-                .HasForeignKey(booking => booking.IdFlight);
-
-            modelBuilder.Entity<Booking>()
-                .HasOne(booking => booking.Passenger)
-                .WithMany(passenger => passenger.Bookings)
-                .HasForeignKey(booking => booking.IdPassenger);
-        }
-        */
     }
 }

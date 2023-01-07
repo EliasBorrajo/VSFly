@@ -5,6 +5,13 @@ using Microsoft.EntityFrameworkCore;
 using System.Reflection.Metadata.Ecma335;
 using System.Linq.Expressions;
 
+/// <summary>
+/// A program that creates and seeds the VSFly database if it does not exist, then prints a list of flights that have available seats.
+/// </summary>
+/// <remarks>
+/// The program first checks if the database exists and creates it if necessary. It then seeds the database if it is empty, and prints a list of flights that have available seats.
+/// </remarks>
+
 Console.WriteLine("VS Fly Core APP");
 using (var context = new VSFlyContext())
 {

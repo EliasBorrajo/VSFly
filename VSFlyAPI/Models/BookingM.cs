@@ -11,13 +11,5 @@ namespace VSFlyAPI.Models
         public int IdPassenger { get; set; }
 
 
-        // Foreing Key
-        /*[ForeignKey("Flight")]
-        [InverseProperty("BookedIn")]*/
-        //public virtual Flight Flight { get; set; }
-
-        /*[ForeignKey("Passenger")]
-        [InverseProperty("Bookings")]*/
-        //public virtual Passenger Passenger { get; set; }
     }
 }
