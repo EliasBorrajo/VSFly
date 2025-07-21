@@ -1,3 +1,49 @@
+# VSFly ✈️
+
+> **Dynamic flight pricing API & MVC demo – built with ASP.NET Core 6 + Entity Framework Core**
+
+---
+
+## 1. English overview
+
+VSFly is a semester project that explores **dynamic ticket pricing** for an airline. It contains two runnable projects:
+
+| Folder         | Role                                                  | Main tech                                     |
+| -------------- | ----------------------------------------------------- | --------------------------------------------- |
+| `VSFlyAPI/`    | REST API exposing flights & ticket‑purchase endpoints | ASP.NET Core 6, EF Core (code‑first), Swagger |
+| `VSFlyWebApp/` | Demo airline website that consumes the API            | ASP.NET Core MVC (Razor Pages)                |
+
+### Key features
+
+* **Dynamic pricing algorithm** driven by load‑factor & purchase lead‑time.
+* Auto‑generated **Swagger / OpenAPI** documentation.
+* **Code‑first** DB schema via EF Core migrations.
+* Partner‑friendly **JSON** responses.
+* Bonus MVC demo: browse flights & buy tickets.
+
+### Pricing logic (summary)
+
+| Condition                                       | Sale price    |
+| ----------------------------------------------- | ------------- |
+| > 80 % seats sold                               | 150 % of base |
+| < 20 % seats sold & < 2 months before departure | 80 % of base  |
+| < 50 % seats sold & < 1 month before departure  | 70 % of base  |
+| Otherwise                                       | Base price    |
+
+Implemented in `VSFlyAPI/Services/PriceCalculator.cs`.
+
+### Requirements
+
+*Requires .NET 6 SDK & a SQL Server instance (Express by default).*
+
+### Developers
+
+* **Bastien Salamin**
+* **Elias Borrajo**
+
+---
+
+## 2. README original (FR/EN) – non modifié
 # VSFly by Borrajo Elias & Salamin Bastien
 Date du rendu, le 10.01.2023
 
