@@ -120,9 +120,11 @@ Interaction Flow:
 
 ---
 
-\*\*\*Project realized for the course \*\*\*\*Module 634.2)\* \*\*\*Programmation par composants - \*\*\*Entity Framework & ASP.NET Core WebAPI \*
-***Instructor: Antoine Widmer, HES-SO Valais-Wallis***
-\*Context: \* Bachelor of Science in Business IT, 5th Semester\*
+Project realized for the course Module 634.2) Programmation par composants - Entity Framework & ASP.NET Core WebAPI
+
+Instructor: Antoine Widmer, HES-SO Valais-Wallis
+
+Context: Bachelor of Science in Business IT, 5th Semester
 
 ---
 
